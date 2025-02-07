@@ -12,7 +12,7 @@
     dest: /var/www/html/index.html
 
 - name: change tag in index.html
-  lineinfile:
+  replace:
     path: /var/www/html/index.html
-    regexp: '[[tag]]'
+    regexp: '\[\[tag\]\]'
     line: "{{ ansible_user_id }}"

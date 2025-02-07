@@ -11,4 +11,8 @@
     src: ../src/index.html
     dest: /var/www/html/index.html
 
-  
+- name: Change tag in index.html
+  replace:
+    path: /var/www/html/index.html
+    regexp: '\[\[tag\]\]'
+    replace: '<span style="color:red"> amazon-linux </span>'
