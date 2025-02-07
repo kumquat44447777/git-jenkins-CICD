@@ -6,8 +6,9 @@
     name: httpd
     state: started
   
-- name: create index.html in amazone-linux
-  get_url:
-    url: https://www.daum.net
-    dest: /var/www/html
+- name: Copy index.html to Ubuntu
+  copy:
+    src: ./src/amazon/index.html
+    dest: /var/www/html/index.html
+
   

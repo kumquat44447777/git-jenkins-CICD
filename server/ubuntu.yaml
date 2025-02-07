@@ -6,7 +6,7 @@
     name: nginx
     state: started
   
-- name: create index.html in ubuntu
-  get_url:
-    url: https://www.daum.net
-    dest: /var/www/html
+- name: Copy index.html to Ubuntu
+  copy:
+    src: ./src/ubuntu/index.html
+    dest: /var/www/html/index.html
