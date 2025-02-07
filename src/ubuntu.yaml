@@ -1,0 +1,12 @@
+- name: install web-server in ubuntu
+  action: "{{ ansible_pkg_mgr }} name=nginx state=latest"
+  
+- name: start web-serber in ubuntu
+  service:
+    name: nginx
+    state: started
+  
+- name: create index.html in ubuntu
+  get_url:
+    url: https://www.daum.net
+    dest: /var/www/html

@@ -1,0 +1,17 @@
+---
+- name: create server per distribution
+  hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    dist: "{{ 'amazon' if ansible_distribution == 'Amazon' else 'ubuntu'  }}"
+
+  tasks:
+    - name: work 
+      include_tasks: "{{ dist }}.yaml"
+      
+    - name: print IP ADDress
+      debug:
+        msg:
+          - "NodeName : {{ ansible_nodename }}"
+          - "eth0 : {{ ansible_eth0.ipv4.address }}"
