@@ -9,9 +9,3 @@
   tasks:
     - name: work 
       include_tasks: "{{ dist }}.yaml"
-      
-    - name: print IP ADDress
-      debug:
-        msg:
-          - "NodeName : {{ ansible_nodename }}"
-          - "eth0 : {{ ansible_eth0.ipv4.address }}"
