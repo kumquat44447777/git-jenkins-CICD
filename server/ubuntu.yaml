@@ -11,8 +11,8 @@
     src: ../src/index.html
     dest: /var/www/html/index.html
 
-- name: change tag in index.html
+- name: Change tag in index.html
   replace:
     path: /var/www/html/index.html
     regexp: '\[\[tag\]\]'
-    line: "{{ ansible_user_id }}"
+    replace: '<span style="color:red"> ubuntu </span>'
