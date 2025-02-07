@@ -8,5 +8,5 @@
   
 - name: Copy index.html to Ubuntu
   copy:
-    src: ./src/ubuntu/index.html
+    src: ../src/ubuntu/index.html
     dest: /var/www/html/index.html

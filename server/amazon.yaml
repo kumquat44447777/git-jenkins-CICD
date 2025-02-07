@@ -6,9 +6,9 @@
     name: httpd
     state: started
   
-- name: Copy index.html to Ubuntu
+- name: Copy index.html to amazon-linux
   copy:
-    src: ./src/amazon/index.html
+    src: ../src/amazon/index.html
     dest: /var/www/html/index.html
 
   
