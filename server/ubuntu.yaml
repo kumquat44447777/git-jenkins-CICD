@@ -6,7 +6,13 @@
     name: nginx
     state: started
   
-- name: Copy index.html to Ubuntu
+- name: Copy index.html
   copy:
-    src: ../src/ubuntu/index.html
+    src: ../src/index.html
     dest: /var/www/html/index.html
+
+- name: change tag in index.html
+  lineinfile:
+    path: /var/www/html/index.html
+    regexp: '[[tag]]'
+    line: "{{ ansible_user_id }}"

@@ -8,7 +8,7 @@
   
 - name: Copy index.html to amazon-linux
   copy:
-    src: ../src/amazon/index.html
+    src: ../src/index.html
     dest: /var/www/html/index.html
 
   
